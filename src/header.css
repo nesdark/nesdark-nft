@@ -1,0 +1,132 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.7rem 2.1rem;
+}
+
+header h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 4.9rem;
+}
+
+header h2 span {
+  color: var(--red);
+}
+
+header nav .menu {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 8.3rem;
+  left: 0;
+  transform: translateX(100%);
+
+  z-index: 100;
+}
+
+header .menu ul {
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.3s ease;
+}
+
+header .menu ul li:first-child {
+  border-top: 1px white solid;
+}
+
+header .menu ul li {
+  width: 100%;
+  border-bottom: white 1px solid;
+
+  padding: 1.6rem 3.2rem;
+
+  font-family: var(--title-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+
+  color: #ffffff;
+}
+
+header .menu ul li:hover {
+  font-weight: 700;
+}
+
+header .menu .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: max-content;
+  background-color: white;
+
+  margin: 25rem auto;
+
+  padding: 1.4rem 2.2rem;
+
+  position: relative;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  color: #000000;
+}
+
+header .menu-btn {
+  display: block;
+  cursor: pointer;
+}
+
+header .menu-btn .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--red);
+
+  margin: 5px auto;
+  transition: all 0.2s;
+
+  border-radius: 2px;
+}
+
+/* MENU - CLOSE */
+header .menu,
+header .button {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* MENU - OPEN */
+body.menu-open .menu,
+body.menu-open .button {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-open .menu {
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+body.menu-open header .menu-btn .bar:first-child {
+  transform: rotate(45deg);
+}
+
+body.menu-open header .menu-btn .bar:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+body.menu-open header .menu-btn .bar:nth-child(2) {
+  opacity: 0;
+}
+
+body.menu-open header .menu-btn .bar:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
